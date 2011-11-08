@@ -1,0 +1,1 @@
+class @State extends Backbone.Model

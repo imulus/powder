@@ -1,0 +1,264 @@
+@import "lib/reset";
+@import "lib/methods";
+@import "lib/utils";
+
+$radius : 5px;
+$pad: 20px;
+$marg: 10px;
+
+
+html {
+  width: 100%; height: 100%;
+}
+
+body {
+  min-width: 100%; min-height: 100%;
+  position: relative;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: normal;
+  color: #222;
+  background: #000 url('/assets/ui/backgrounds/triangles.png') top left repeat fixed;
+  background-attachment: fixed;
+  overflow-y: scroll;
+}
+
+
+a {
+  color: #3D95C9;
+  text-decoration: none;
+}
+
+
+button, 
+.button {
+	border: 0;
+	margin: 0;
+	padding: 0;  
+	display: inline-block; 
+	padding: 5px 10px 6px; 
+	color: #fff; 
+  font-weight: bold;
+	text-decoration: none;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  @include gradient(#555, #222);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+
+  &:active  { 
+    top: 1px; 
+    color: #CCC;
+    @include gradient(#444, #111);
+  }
+  
+  &.green   { @include gradient(rgb(66,182,83),rgb(0,139,53)); }
+  &.red     { @include gradient(rgb(237,124,56),rgb(195,80,39)); }
+}
+
+
+
+
+
+header {
+  width: 728px;
+  margin: auto;
+  padding: $pad;
+  @include autoclear;
+
+  .logo {
+    display: block;
+    float: left;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 21px;
+    color: #999;
+    @include shadow;
+  }
+  
+  .settings {
+    display: block;
+    float: right;
+  }
+  
+}
+
+
+footer {
+  width: 728px;
+  margin: auto;
+  padding: $pad;
+  text-align: center;
+
+  a {
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 95px;
+    background: url('/assets/ui/logos/imulus.png') center center no-repeat;
+    text-indent: -9999em;
+  }
+}
+
+#main {
+  width: 768px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+div.title {
+  position: relative;
+  padding: $pad;
+  border-bottom: 1px solid #aaa;      
+  @include gradient(#ddd, #ccc);
+
+  h1 {
+    color: #aaa;
+    @include highlight;
+  }  
+  
+  .done {
+    display: block;
+    position: absolute;
+    top: 25px; right: $pad;
+  }  
+}
+
+#settings {
+  position: relative;
+  @include autoclear;
+  @include gradient(#eee, #e0e0e0);
+
+  #states {
+    width: 200px;
+    height: 100%;
+    float: left;
+    padding: $pad 0;
+    // box-shadow: inset -20px 0 20px rgba(0,0,0,0.05);
+
+    ul {
+      li {
+        display: block;
+        padding: 5px $pad;
+        font-weight: bold;
+        &:hover, 
+        &.active {
+          cursor: pointer;
+          color: #fff;
+          @include shadow;
+          @include gradient(#666,#444);
+        }
+      }
+    }
+  }
+
+  #state-resorts {
+    padding: $pad;
+    margin-left: 200px;
+    border-left: 1px solid #ccc;
+    height: 100%;
+    @include gradient(rgba(255,255,255,1),rgba(255,255,255,0));
+    background-attachment: fixed;
+    ul {
+      li {
+        display: block;
+        padding: 16px 0;
+        font-size: 16px;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        .buttons { 
+          position: relative;
+          top: -5px;
+          float: right; 
+        }
+        .button {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+}
+
+#resorts {
+  .resort {
+    position: relative;
+    padding: $pad;
+    min-height: 100px;
+    @include highlight;
+    @include gradient(#fff, #f0f0f0);
+
+
+    h2 {
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: -1px;
+      margin-bottom: 5px;
+    }
+
+    span {
+      display: block;
+      float: left;
+      padding: 4px 8px;
+      color: #FFF;
+      border: 1px solid rgba(0,0,0,0.1);
+      box-shadow: inset 0 -2px 2px rgba(0,0,0,0.25);
+      @include shadow;
+      @include gradient(#666, #333);
+
+      &.status {
+        @include left-rounded(3px);
+        &.open {
+          @include gradient(rgb(66,182,83),rgb(0,139,53));
+          border-color: rgb(44,96,66);
+        }
+        &.closed {
+          @include gradient(rgb(237,124,56),rgb(195,80,39));
+          border-color: rgb(150,64,32);
+        }
+      }
+
+      &.conditions {
+        @include right-rounded(3px);
+        border-left: 1px solid rgba(255,255,255,0.2);
+      }
+    }
+
+    ul.snow {
+      position: absolute;
+      top: $pad + 5px; right: $pad;
+      @include autoclear;
+
+      li {
+        display: block;
+        float: left;
+        padding: 0 $pad;
+        border-left: 2px solid rgba(255,255,255,1);
+        border-right: 1px solid rgba(0,0,0,0.2);
+        &:first-child { border-left: 0; }
+        &:last-child { border-right: 0; }
+        font-weight: 300;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        b {
+          display: block;
+          font-size: 24px;
+          line-height: 26px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+

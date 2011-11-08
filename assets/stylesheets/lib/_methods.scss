@@ -1,0 +1,115 @@
+@mixin rounded ($radius: 3px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin custom-rounded($tr:0px, $br:0px, $bl:0px, $tl:0px) {
+	@include rounded(0px);
+	-webkit-border-top-right-radius: $tr;
+	-moz-border-radius-topright: $tr;
+	border-top-right-radius: $tr;		
+	-webkit-border-bottom-right-radius: $br;
+	-moz-border-radius-bottomright: $br;
+	border-bottom-right-radius: $br;	
+	-webkit-border-bottom-left-radius: $bl;
+	-moz-border-radius-bottomleft: $bl;	
+	border-bottom-left-radius: $bl;
+	-webkit-border-top-left-radius: $tl;
+	-moz-border-radius-topleft: $tl;
+	border-top-left-radius: $tl;
+}
+
+@mixin top-rounded($radius: 5px){
+	@include rounded(0px);
+	-webkit-border-top-left-radius: $radius;
+	-webkit-border-top-right-radius: $radius;
+	-moz-border-radius-topleft: $radius;
+	-moz-border-radius-topright: $radius;
+	border-top-left-radius: $radius;
+	border-top-right-radius: $radius;
+}
+
+@mixin bottom-rounded($radius: 5px){
+	@include rounded(0px);
+	-webkit-border-bottom-left-radius: $radius;
+	-webkit-border-bottom-right-radius: $radius;
+	-moz-border-radius-bottomleft: $radius;
+	-moz-border-radius-bottomright: $radius;
+	border-bottom-left-radius: $radius;
+	border-bottom-right-radius: $radius;
+}
+
+@mixin right-rounded($radius: 3px) {
+	@include rounded(0px);
+	-webkit-border-top-right-radius: $radius;
+	-webkit-border-bottom-right-radius: $radius;
+	-moz-border-radius-topright: $radius;
+	-moz-border-radius-bottomright: $radius;
+	border-top-right-radius: $radius;
+	border-bottom-right-radius: $radius;
+}
+
+@mixin left-rounded($radius: 3px) {
+	@include rounded(0px);
+	-webkit-border-top-left-radius: $radius;
+	-webkit-border-bottom-left-radius: $radius;
+	-moz-border-radius-topleft: $radius;
+	-moz-border-radius-bottomleft: $radius;
+	border-top-left-radius: $radius;
+	border-bottom-left-radius: $radius;
+}
+	
+@mixin gradient($from: #FFF, $to: #DDD, $default: #EEE){
+	background: $default;
+	background:-webkit-gradient(linear,left top,left bottom,from($from),to($to));
+	background:-moz-linear-gradient(top,$from,$to);
+}	
+
+@mixin gradient-with-image($image, $from: #FFF, $to: #DDD){
+	background: $image;
+	background: $image, -webkit-gradient(linear,left top,left bottom,from($from),to($to));
+	background: $image, -moz-linear-gradient(top,$from,$to);
+}
+
+@mixin hgradient($from: #FFF, $to: #DDD, $default: #EEE){
+	background: $default;
+	background: -moz-linear-gradient(left, $from, $to);
+	background: -webkit-gradient(linear, left center, right center, from($from), to($to));
+}
+
+@mixin boxshadow($v:0, $h:0, $s: 10px, $o: 1){
+	-webkit-box-shadow: $v $h $s RGBA(0,0,0,$o);
+	-moz-box-shadow: $v $h $s RGBA(0,0,0,$o);
+	box-shadow: $v $h $s RGBA(0,0,0,$o);
+}
+
+@mixin boxhighlight($v:0, $h:0, $s: 10px, $o: 1){
+	-webkit-box-shadow: $v $h $s RGBA(255,255,255,$o);
+	-moz-box-shadow: $v $h $s RGBA(255,255,255,$o);
+	box-shadow: $v $h $s RGBA(255,255,255,$o);
+}
+
+@mixin glow($s: 10px, $c: #FFF){
+	-webkit-box-shadow: 0 0 $s $c;
+	-moz-box-shadow: 0 0 $s $c;
+	box-shadow: 0 0 $s $c;
+}
+
+@mixin shadow($opacity: 1, $s: -1px){ 
+	text-shadow: 0 $s 0 RGBA(0,0,0,$opacity); 
+}
+
+@mixin highlight($opacity: 1, $s: 1px ){ 
+	text-shadow: 0 $s 0 RGBA(255,255,255,$opacity); 
+}
+
+@mixin cshad($c: #000, $s: 1.5px){
+	text-shadow: 0 $s 0 $c;
+}
+
+@mixin rotate($deg){
+  -webkit-transform: rotate($deg);  
+  -moz-transform: rotate($deg);  
+  -o-transform: rotate($deg);
+}

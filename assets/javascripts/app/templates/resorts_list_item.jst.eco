@@ -1,0 +1,10 @@
+<%= @resort.name %>
+
+<div class="buttons">
+  <% if @resort.in_my_resorts : %>
+    <a href="#" class="button remove red">Remove</a>
+  <% else : %>
+    <a href="#" class="button add green">Add</a>
+  <% end %>
+</div>
+

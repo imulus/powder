@@ -1,0 +1,9 @@
+<h2><%= @resort.name %></h2>
+
+<span class="status <%= @resort.status.toLowerCase() %>"><%= @resort.status %></span>
+<span class="conditions"><%= @resort.conditions %></span>
+
+<ul class="snow">
+  <li><b><%= @resort.base.depth %><%= @resort.base.metric_shorthand %></b> Base</li>
+  <li><b><%= @resort.snowfall.amount %><%= @resort.snowfall.metric_shorthand %></b> New</li>        
+</ul>

@@ -1,0 +1,12 @@
+<div class="title">
+  <h1>Settings</h1>      
+  <a href="#" class="button done">Done</a>
+</div>
+
+<div id="states">
+</div>
+
+<div id="state-resorts">
+</div>
+
+

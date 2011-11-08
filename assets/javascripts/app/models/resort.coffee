@@ -1,0 +1,1 @@
+class @Resort extends Backbone.Model
