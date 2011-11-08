@@ -1,0 +1,5 @@
+tmp/
+.sass-cache/
+.bundle
+.DS_Store
+public/assets
