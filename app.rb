@@ -92,12 +92,16 @@ module Powder
 			end			
 		end
 
+
+		["/", "/resorts/?", "/settings/?"].each do |path|
+		  get path do
+				@states	= states.to_json
+				@resorts = resorts
+	      erb :index
+		  end
+		end
+
 		
-    get "/" do
-			@states	= states.to_json
-			@resorts = resorts
-      erb :index
-    end
 
 		get "/resorts.json" do
 			content_type :json
