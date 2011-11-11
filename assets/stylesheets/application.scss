@@ -193,7 +193,7 @@ div.title {
   .resort {
     position: relative;
     padding: $pad;
-    min-height: 100px;
+    min-height: 80px;
     @include highlight;
     @include gradient(#fff, #f0f0f0);
 

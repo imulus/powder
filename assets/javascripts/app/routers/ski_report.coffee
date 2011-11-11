@@ -8,32 +8,38 @@ class @SkiReport extends Backbone.Router
     @resorts      = new Resorts
     @states       = new States
     @myResorts    = new MyResorts
-
+    
+    # Reset the states and resorts instances
+    # with the JSON we output right on the page
     @states.reset(window.states_json)
     @resorts.reset(window.resorts_json)
     
-    my_resorts_ids = @myResorts.get('resort_ids')
-    
-    @resorts.each (resort) ->
-      if resort.get('id') in my_resorts_ids
+    # Check each resort to see if it is in myResorts
+    # If it is then set a flag on the resort (flag used for filtering)
+    @resorts.each (resort) =>
+      if @myResorts.includes resort.get('id')
         resort.set in_my_resorts: true
       
+    # Boot up all the views we'll need
     @headerView   = new HeaderView
     @footerView   = new FooterView
     @mainView     = new MainView    
     @resortsView  = new ResortsView collection: @resorts
     @settingsView = new SettingsView states: @states, resorts: @resorts, myResorts: @myResorts
 
+    # Slap em on the body
     $('body').append @headerView.render().el
     $('body').append @mainView.render().el    
     $('body').append @footerView.render().el    
 
-  
+
   resorts: =>
-    $(@mainView.render().el).append @resortsView.render().el
+    $(@mainView.el).empty()
+    $(@mainView.el).append @resortsView.render().el
 
     
   settings: =>
-    $(@mainView.render().el).append @settingsView.render().el
+    $(@mainView.el).empty()
+    $(@mainView.el).append @settingsView.render().el
 
   
