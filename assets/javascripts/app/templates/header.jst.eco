@@ -1,2 +1,8 @@
 <a href="/resorts" class="logo">Powder</a>
-<a href="/settings" class="button settings">Settings</a>
+<a href="/settings" class="button settings">
+  <% if @settings.open : %>
+    Done
+  <% else : %>
+    Settings  
+  <% end %>
+</a>

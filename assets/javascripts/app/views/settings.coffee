@@ -3,11 +3,8 @@ class @SettingsView extends Backbone.View
   id: 'settings'
   template: JST["app/templates/settings"]
 
-  events:
-    'click .done' : 'openResorts'
-
   initialize: ->
-    @settings = new Settings
+    @settings = @options.settings
 
     @statesListView = new StatesListView  
       collection: @options.states
@@ -27,6 +24,4 @@ class @SettingsView extends Backbone.View
     $('#state-resorts', @el).append @resortsListView.render().el
     return this
 
-  openResorts: (event) ->
-    event.preventDefault()
-    App.navigate "resorts", true
+
