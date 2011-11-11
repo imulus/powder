@@ -7,8 +7,11 @@ class @ResortsView extends Backbone.View
 
   render: =>
     $(@el).empty()
+    
+    # We only want to render out resorts that are in MyResorts
     @collection.each (resort) =>
       @appendResort resort if resort.get('in_my_resorts')
+
     return this
 
   appendResort: (resort) =>

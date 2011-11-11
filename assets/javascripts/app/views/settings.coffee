@@ -27,6 +27,6 @@ class @SettingsView extends Backbone.View
     $('#state-resorts', @el).append @resortsListView.render().el
     return this
 
-  openResorts:  (event) =>
+  openResorts: (event) ->
     event.preventDefault()
     App.navigate "resorts", true
