@@ -34,8 +34,8 @@ module Powder
 
 
     def self.stash(key, data)
-      @@items[key] =  { 	:data => data,
-                       	:expires => Time.now + 600 }
+      @@items[key] =  {   :data => data,
+                       	  :expires => Time.now + 10800 } # cache for 3hrs
       return data
     end
   end
