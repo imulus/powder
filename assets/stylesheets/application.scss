@@ -194,6 +194,7 @@ div.title {
     position: relative;
     padding: $pad;
     min-height: 80px;
+    border-bottom: 1px solid #E0E0E0;
     @include highlight;
     @include gradient(#fff, #f0f0f0);
 
