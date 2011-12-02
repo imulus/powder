@@ -1,17 +1,25 @@
 # Powder | A Backbone-powered iPad webapp
 **Track snow conditions at your favorite ski resorts**
 
-Powder is an experiment using [http://documentcloud.github.com/backbone/](backbone.js) to power an iPad webapp. On the client, Powder uses the browser's native HTML5 localStorage mechanism to save the users's preferences, the list of resorts the user chooses to track. On the server, Powder uses Sinatra to fetch and parse various snow/ski reports from [http://onthesnow.com/](http://onthesnow.com/) then serve it up as JSON to the browser.
+
+![Screenshot](https://github.com/imulus/powder/raw/master/assets/images/powder-ipad.png)
+
+
+Powder is an experiment using [backbone.js](http://documentcloud.github.com/backbone/) to power an iPad webapp. On the client, Powder uses the browser's native HTML5 localStorage mechanism to save the users's preferences, the list of resorts the user chooses to track. On the server, Powder uses Sinatra to fetch and parse various snow/ski reports from [http://onthesnow.com/](http://onthesnow.com/) then serve it up as JSON to the browser.
+
+
+
 
 ### The Stack
 
-- [https://github.com/sinatra/sinatra](Sinatra) for feed parsing
-- [https://github.com/sstephenson/sprockets](Sprockets) for asset packaging
-- [https://github.com/jashkenas/coffee-script/](CoffeeScript) because it's better than JavaScript
-- [https://github.com/nex3/sass](SCSS) because it's better than CSS
-- [https://github.com/documentcloud/backbone](Backbone) for client-side structure
-- [https://github.com/sstephenson/eco](Eco) for Backbone templating
-- [http://dev.w3.org/html5/webstorage/](localStorage) for client-side persistence
+- [Sinatra](https://github.com/sinatra/sinatra) for feed parsing
+- [Sprockets](https://github.com/sstephenson/sprockets) for asset packaging
+- [CoffeeScript](https://github.com/jashkenas/coffee-script/) because it's better than JavaScript
+- [SCSS](https://github.com/nex3/sass) because it's better than CSS
+- [Backbone](https://github.com/documentcloud/backbone) for client-side structure
+- [Eco](https://github.com/sstephenson/eco) for Backbone templating
+- [localStorage](http://dev.w3.org/html5/webstorage/) for client-side persistence
+
 
 
 ## Installation
@@ -33,6 +41,7 @@ Powder is an experiment using [http://documentcloud.github.com/backbone/](backbo
 ## Credit
 
 Powder gets all resort data from the [http://onthesnow.com/](http://onthesnow.com/) RSS feed. Many thanks.
+
 
 
 ## License
