@@ -1,9 +1,9 @@
 require './app'
 
 map "/assets" do
-  run Powder::App.sprockets
+  run App.sprockets
 end
 
 map "/" do
-  run Powder::App
+  run App
 end
