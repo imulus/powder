@@ -2,6 +2,7 @@ require 'bundler'
 Bundler.require
 
 require 'json'
+require 'cfpropertylist'
 require './lib/powder'
 
 module AssetHelpers
@@ -34,9 +35,18 @@ class App < Sinatra::Base
   ["/", "/resorts/?", "/settings/?"].each do |path|
     get path do
       @states	= Powder.states.to_json
-      @resorts = Powder.resorts
+      @resorts = Powder.resorts.to_json
       erb :index
     end
   end
+  
+  get '/api/json' do 
+    Powder.resorts.to_json
+  end
+  
+  get '/api/plist' do    
+    Powder.resorts.to_plist
+  end
+  
 end
 
