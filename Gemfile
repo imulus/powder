@@ -2,8 +2,10 @@ source "http://rubygems.org"
 
 gem "sinatra", :require => "sinatra/base"
 gem 'i18n'
+gem 'builder'
 gem "activesupport", :require => "active_support"
 gem "json"
+gem "CFPropertyList"
 
 gem 'coffee-script', '~>2.2.0'
 gem "uglifier", '~>1.0.3'

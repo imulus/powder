@@ -19,7 +19,7 @@ module Powder
 
   def self.resorts
     if Cache.fetch('resorts')
-      Cache.fetch('resorts').to_json
+      Cache.fetch('resorts')
     else
       resorts = []
 
@@ -29,7 +29,7 @@ module Powder
 
       resorts.sort! {|x,y| x[:name].strip.downcase <=> y[:name].strip.downcase }
       Cache.stash('resorts', resorts)
-     	resorts.to_json
+     	return resorts
     end
   end
 
