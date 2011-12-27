@@ -3,6 +3,7 @@ Bundler.require
 
 require 'json'
 require 'cfpropertylist'
+require 'active_support/core_ext/array/conversions'
 require './lib/powder'
 
 module AssetHelpers
@@ -40,12 +41,17 @@ class App < Sinatra::Base
     end
   end
   
-  get '/api/json' do 
-    Powder.resorts.to_json
-  end
-  
-  get '/api/plist' do    
-    Powder.resorts.to_plist
+  get '/resorts.*' do
+    case params[:splat].first
+      when 'json' 
+          Powder.resorts.to_json
+      when 'plist'
+        Powder.resorts.to_plist
+      when 'xml'
+        Powder.resorts.to_xml(:root => :resorts)
+      else
+        ''
+      end
   end
   
 end
