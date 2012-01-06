@@ -54,5 +54,17 @@ class App < Sinatra::Base
       end
   end
   
+  get '/resorts/json' do
+    Powder.resorts.to_json
+  end
+  
+  get '/resorts/plist' do
+    Powder.resorts.to_plist
+  end
+  
+  get '/resorts/xml' do
+    Powder.resorts.to_xml(:root => :resorts)
+  end
+  
 end
 
