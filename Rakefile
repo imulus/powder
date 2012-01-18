@@ -12,7 +12,7 @@ task :update_resorts_cache do
   end
 
   resorts.sort! {|x,y| x[:name].strip.downcase <=> y[:name].strip.downcase }
-  Powder::REDIS['resorts'] = resorts
+  Powder::REDIS['resorts'] = Marshal.dump(resorts)
   
   puts "Done."
 end

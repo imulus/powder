@@ -20,7 +20,7 @@ module Powder
   end
 
   def self.resorts
-    eval(REDIS['resorts'])
+    Marshal.load(REDIS['resorts'])
   end
   
 end
