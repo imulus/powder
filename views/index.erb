@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="<%= asset_path('application.css') %>">
 
     <script type="text/javascript" charset="utf-8">
-      window.resorts_json = <%= @resorts.to_json %>;
-      window.states_json = <%= @states.to_json %>;       
+      window.resorts_json = <%= @resorts %>;
+      window.states_json = <%= @states %>;       
     </script>
     
     <script src="<%= asset_path('application.js') %>"></script>
