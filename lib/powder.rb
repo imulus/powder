@@ -1,5 +1,8 @@
+require 'redis'
 require './lib/ski_report'
 require './lib/powder/cache'
+
+
 
 module Powder
 
@@ -8,6 +11,9 @@ module Powder
               'Missouri', 'Montana', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 
               'New York', 'North Carolina', 'Ohio', 'Oregon', 'Pennsylvania', 'South Dakota', 'Utah', 
               'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming' ]
+
+  uri = URI.parse(ENV["REDISTOGO_URL"])
+  REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
 
   def self.states
 		STATES.collect do |state| 
@@ -18,8 +24,8 @@ module Powder
   
 
   def self.resorts
-    if Cache.fetch('resorts')
-      Cache.fetch('resorts')
+    if REDIS['resorts']
+      REDIS['resorts']
     else
       resorts = []
 
@@ -28,7 +34,7 @@ module Powder
       end
 
       resorts.sort! {|x,y| x[:name].strip.downcase <=> y[:name].strip.downcase }
-      Cache.stash('resorts', resorts)
+      REDIS['resorts'] = resorts
      	return resorts
     end
   end

@@ -6,6 +6,7 @@ gem 'builder'
 gem "activesupport", :require => "active_support"
 gem "json"
 gem "CFPropertyList"
+gem "redis"
 
 gem 'coffee-script', '~>2.2.0'
 gem "uglifier", '~>1.0.3'
