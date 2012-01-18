@@ -35,8 +35,8 @@ class App < Sinatra::Base
 
   ["/", "/resorts/?", "/settings/?"].each do |path|
     get path do
-      @states	= Powder.states.to_json
-      @resorts = Powder.resorts.to_json
+      @states	= Powder.states
+      @resorts = Powder.resorts
       erb :index
     end
   end
