@@ -5,7 +5,7 @@ module Powder
 
   STATES = [	'Alaska', 'Arizona', 'California', 'Colorado', 'Connecticut', 'Idaho',
               'Illinois', 'Indiana', 'Iowa', 'Maine', 'Massachusetts', 'Michigan', 'Minnesota',
-              'MissoURI', 'Montana', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico',
+              'Missouri', 'Montana', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico',
               'New York', 'North Carolina', 'Ohio', 'Oregon', 'Pennsylvania', 'South Dakota', 'Utah',
               'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming' ]
 
