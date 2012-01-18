@@ -21,6 +21,10 @@ class App < Sinatra::Base
   set :assets_path, File.join(root, 'public', assets_prefix)
 
   configure do
+    require 'redis'
+    uri = URI.parse(ENV["REDISTOGO_URL"])
+    REDIS = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
+
     sprockets.append_path(File.join(root, 'assets', 'stylesheets'))
     sprockets.append_path(File.join(root, 'assets', 'javascripts'))
     sprockets.append_path(File.join(root, 'assets', 'images'))
