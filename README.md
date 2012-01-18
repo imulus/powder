@@ -18,7 +18,9 @@ Powder is an experiment using [backbone.js](http://documentcloud.github.com/back
 - [SCSS](https://github.com/nex3/sass) because it's better than CSS
 - [Backbone](https://github.com/documentcloud/backbone) for client-side structure
 - [Eco](https://github.com/sstephenson/eco) for Backbone templating
+- [Redis](http://redis.io) for server-side caching
 - [localStorage](http://dev.w3.org/html5/webstorage/) for client-side persistence
+
 
 
 
